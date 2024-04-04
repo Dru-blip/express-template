@@ -1,17 +1,20 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 
-import { authRouter } from "./routers";
+import { authRouter, profileRouter } from "./routers";
 
 
-const prisma = new PrismaClient();
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+
+app.use("/profile",profileRouter)
 app.use("/auth",authRouter)
+
 
 
 

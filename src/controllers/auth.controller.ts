@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken"
 
 
 export const login=async (req:Request,res:Response)=>{
+
     const user_data=req.body['user']
 
     const user=await db.user.findFirst({
